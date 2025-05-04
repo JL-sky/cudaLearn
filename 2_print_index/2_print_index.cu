@@ -21,14 +21,15 @@ __global__ void print_thread_idx_per_block_kernel() {
 }
 
 __global__ void print_thread_idx_per_grid_kernel() {
+  // 计算一个grid中的thread数量
   int bSize = blockDim.z * blockDim.y * blockDim.x;
-
+  // 计算相对于grid的全局block索引
   int bIndex =
       blockIdx.z * gridDim.x * gridDim.y + blockIdx.y * gridDim.x + blockIdx.x;
-
+  // 计算相对于block的全局thread索引
   int tIndex = threadIdx.z * blockDim.x * blockDim.y +
                threadIdx.y * blockDim.x + threadIdx.x;
-
+  // 计算相对于grid的全局thread索引
   int index = bIndex * bSize + tIndex;
 
   printf("block idx: %3d, thread idx in block: %3d, thread idx: %3d\n", bIndex,

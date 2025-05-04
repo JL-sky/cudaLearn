@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "utils.hpp"
+#include "../utils.hpp"
 
 // 获取gpu设备信息
 void GetDivice() {

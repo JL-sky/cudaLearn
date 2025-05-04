@@ -5,7 +5,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "utils.hpp"
+#include "../utils.hpp"
 
 constexpr int N = 32 * 1024;
 
